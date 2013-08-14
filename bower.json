@@ -13,7 +13,7 @@
     "angular-ui-utils": "git://github.com/angular-ui/ui-utils.git#~0.0.4",
     "angular": "git://github.com/angular/bower-angular.git#~1.0.7",
     "bootstrap-sass": "git://github.com/jlong/sass-twitter-bootstrap.git#~2.3.2",
-    "angular-fire": "~0.2.0"
+    "angular-fire": "~0.2.0",
     "angular-animate": "v1.2.0rc1",
     "angular-resource": "v1.2.0rc1",
     "angular-route": "v1.2.0rc1",
