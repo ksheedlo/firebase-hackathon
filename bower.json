@@ -1,20 +1,22 @@
 {
-  "name": "firebaseHackathon",
+  "name": "firebase-hackathon",
   "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "angular": "v1.2.0rc1",
-    "json3": "~3.2.4",
-    "jquery": "~1.9.1",
-    "bootstrap-sass": "~2.3.1",
-    "es5-shim": "~2.0.8",
-    "angular-animate": "v1.2.0rc1",
-    "angular-resource": "v1.2.0rc1",
-    "angular-route": "v1.2.0rc1",
-    "angular-fire": "~0.2.0",
-    "firebase": "http://cdn.firebase.com/v0/firebase.js"
+    "angular-bootstrap": "git://github.com/angular-ui/bootstrap-bower.git#~0.5.0",
+    "angular-ui-utils": "git://github.com/angular-ui/ui-utils.git#~0.0.4",
+    "angular": "git://github.com/angular/bower-angular.git#~1.0.7",
+    "bootstrap-sass": "git://github.com/jlong/sass-twitter-bootstrap.git#~2.3.2",
+    "angular-fire": "~0.2.0"
   },
   "devDependencies": {
-    "angular-mocks": "v1.2.0rc1",
-    "angular-scenario": "v1.2.0rc1"
+    "angular-mocks": "git://github.com/angular/bower-angular-mocks.git#~1.0.7",
+    "angular-scenario": "git://github.com/angular/bower-angular-scenario.git#~1.0.7"
   }
 }
