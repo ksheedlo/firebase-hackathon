@@ -1,6 +1,6 @@
 <form class="row-fluid">
 	<div class="span-9">
-		<input type="text" data-ng-model="searchIssues">
+		<input type="text" data-ng-model="searchIssues" placeholder="Filter Issues">
 	</div>
 </form>
 
@@ -16,6 +16,7 @@
           <th>Opened By</th>
           <th>Time</th>
           <th>Description</th>
+          <th>Vote</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +26,7 @@
           <td>{{issue.user.login}}</td>
           <td>{{issue.updated_at}}</td>
           <td><button class="btn">View Issue</button></td>
+          <td><a ng-href="voteUp(issue.id)">Up</a>|<a ng-href="voteDown(issue.id)">Down</a></td>
         </tr>
        
       </tbody>
