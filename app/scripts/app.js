@@ -10,4 +10,9 @@ angular.module('firebaseHackathonApp', ['ngRoute', 'ngAnimate', 'firebase'])
       .otherwise({
         redirectTo: '/'
       });
+  }])
+  .run(['angularFire', 'angularFireAuth', '$rootScope', function(angularFire, angularFireAuth, $rootScope){
+    var url = 'https://refridge.firebaseio.com/';
+    angularFire(url, $rootScope, 'refridge', {});
+    angularFireAuth.initialize(url, { scope: $rootScope, name: 'user'});
   }]);
