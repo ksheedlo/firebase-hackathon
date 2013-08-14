@@ -12,7 +12,13 @@ angular.module('firebaseHackathonApp', ['ngRoute', 'ngAnimate', 'firebase'])
       });
   }])
   .run(['angularFire', 'angularFireAuth', '$rootScope', function(angularFire, angularFireAuth, $rootScope){
-    var url = 'https://refridge.firebaseio.com/';
-    angularFire(url, $rootScope, 'refridge', {});
+    var url = 'https://github-issues.firebaseio.com/';
+    angularFire(url, $rootScope, 'firebase', {});
     angularFireAuth.initialize(url, { scope: $rootScope, name: 'user'});
+    $rootScope.login = function() {
+      angularFireAuth.login('github');
+    };
+    $rootScope.logout = function() {
+      angularFireAuth.logout();
+    };
   }]);
