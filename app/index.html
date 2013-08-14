@@ -19,6 +19,8 @@
 
     <a ng-click="login()" class="btn">Login</a>
     <a ng-click="logout()" class="btn">Logout</a>
+
+    <pre>{{firebase|json}}</pre>
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
     <![endif]-->
@@ -41,6 +43,7 @@
     </script>
 
     <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+    <script src="https://cdn.firebase.com/v0/firebase-auth-client.js"></script>
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
