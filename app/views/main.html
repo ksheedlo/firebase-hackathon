@@ -1,6 +1,6 @@
 <form class="row-fluid">
 	<div class="span-9">
-		<input type="text">
+		<input type="text" data-ng-model="searchIssues">
 	</div>
 </form>
 
@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr data-ng-repeat="issue in issues">
+        <tr data-ng-repeat="issue in issues | filter:searchIssues">
           <td>{{issue.id}}</td>
           <td><a href="{{issue.url}}" title="{{issue.title}}">{{issue.title}}</a></td>
           <td>{{issue.user.login}}</td>
