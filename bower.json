@@ -14,7 +14,7 @@
     "firebase": "http://cdn.firebase.com/v0/firebase.js"
   },
   "devDependencies": {
-    "angular-mocks": "1.2.0rc1",
-    "angular-scenario": "1.2.0rc1"
+    "angular-mocks": "v1.2.0rc1",
+    "angular-scenario": "v1.2.0rc1"
   }
 }
