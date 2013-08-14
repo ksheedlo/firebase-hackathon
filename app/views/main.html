@@ -8,7 +8,7 @@
 <div class="row-fluid">
   <div class="span12">
   	<h3>Main Section</h3>
-    <p ng-show="user.login==key.substr(0,key.indexOf('%2F'))">Only owner can create new tags? <input ng-model="repos[key].options.locked" type="checkbox"></p>
+    <p ng-show="isOwner()">Only owner can create new tags? <input ng-model="repos[key].options.locked" type="checkbox"></p>
   	<table class="table table-hover">
       <thead>
         <tr>

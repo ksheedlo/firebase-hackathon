@@ -18,14 +18,18 @@ angular.module('firebaseHackathonApp')
 
 		$scope.$watch('repos', function(newVal){
 			if (newVal && !newVal[$scope.key])
-				$scope.repos[$scope.key] = { issues: {}, tags: {}, options: {} };
+				$scope.repos[$scope.key] = { issues: {}, labels: {}, options: {} };
 		});
 
 		$scope.save = function(issue) {
 			if (!$scope.repos[$scope.key][issue.id])
-				$scope.repos[$scope.key][issue.id] = { labels: {}, totals: {} };
-			var firebase = $scope.repos[$scope.key][issue.id];
+				$scope.repos[$scope.key].labels[issue.id] = { labels: {}, totals: {} };
+			var firebase = $scope.repos[$scope.key].labels[issue.id];
 			firebase.labels[encode($scope.user.login)] = issue.public_tags;
+		};
+
+		$scope.isOwner = function() {
+			return $scope.user && ($scope.user.login.toLowerCase() === $scope.key.substr(0,$scope. key.indexOf('%2F')).toLowerCase());
 		};
 	}]);
 
