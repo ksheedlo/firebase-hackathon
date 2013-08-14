@@ -10,7 +10,8 @@
     "angular-animate": "v1.2.0rc1",
     "angular-resource": "v1.2.0rc1",
     "angular-route": "v1.2.0rc1",
-    "angular-fire": "~0.2.0"
+    "angular-fire": "~0.2.0",
+    "firebase": "http://cdn.firebase.com/v0/firebase.js"
   },
   "devDependencies": {
     "angular-mocks": "1.2.0rc1",

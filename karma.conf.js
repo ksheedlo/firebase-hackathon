@@ -7,6 +7,7 @@ basePath = '';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
+  'app/bower_components/firebase/index.js',
   'app/bower_components/angular/angular.js',
   'app/bower_components/angular-animate/angular-animate.js',
   'app/bower_components/angular-resource/angular-resource.js',
