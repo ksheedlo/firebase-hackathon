@@ -3,7 +3,7 @@
 angular.module('firebaseHackathonApp', ['ngRoute', 'ngAnimate', 'firebase'])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/:profile/:project', {
         templateUrl: 'views/main.html',
         controller: 'listCtrl'
       })
