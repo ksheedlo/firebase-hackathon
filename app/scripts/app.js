@@ -5,7 +5,7 @@ angular.module('firebaseHackathonApp', ['ngRoute', 'ngAnimate', 'firebase'])
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'listCtrl'
       })
       .otherwise({
         redirectTo: '/'

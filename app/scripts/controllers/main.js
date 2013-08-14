@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('firebaseHackathonApp')
-  .controller('list', ['$scope', '$http', 'angularFire', 'angularFireAuth',
+  .controller('listCtrl', ['$scope', '$http', 'angularFire', 'angularFireAuth',
     function ($scope, $http, angularFire, angularFireAuth) {
       var API_BASE = 'https://api.github.com/';
 
@@ -15,4 +15,5 @@ angular.module('firebaseHackathonApp')
           $scope.issues = data;
         });
       };
+      $scope.get_issues();
     }]);
