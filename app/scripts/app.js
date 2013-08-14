@@ -21,4 +21,7 @@ angular.module('firebaseHackathonApp', ['ngRoute', 'ngAnimate', 'firebase'])
     $rootScope.logout = function() {
       angularFireAuth.logout();
     };
+    $rootScope.$on("angularFireAuth:login", function(evt, user) {
+      $rootScope.user = user;
+    });
   }]);
