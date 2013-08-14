@@ -1,9 +1,36 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+<form class="row-fluid">
+	<div class="span-9">
+		<input type="text">
+	</div>
+</form>
+<div class="row-fluid">
+	<div class="span2">
+		<h3>Sidebar</h3>
+	</div>
+  <div class="span10">
+  	<h3>Main Section</h3>
+  	<table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#ID</th>
+          <th>Title</th>
+          <th>Opened By</th>
+          <th>Time</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>101</td>
+          <td>fix($timeout): clean deferreds immediately after callback exec/cancel</td>
+          <td>Andy Rooger</td>
+          <td>3 hrs ago</td>
+          <td>Previously when passing invokeApply=false, the cleanup used $q and so
+would be pending until the next $digest was triggered. This does not</td>
+        </tr>
+       
+      </tbody>
+    </table>
+
+  </div>
 </div>
