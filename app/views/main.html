@@ -3,13 +3,10 @@
 		<input type="text">
 	</div>
 </form>
-{{issues | json:pretty}}
+
 <button class="btn btn-success" ng-click="get_issues()">Go</button>
 <div class="row-fluid">
-	<div class="span2">
-		<h3>Sidebar</h3>
-	</div>
-  <div class="span10">
+  <div class="span12">
   	<h3>Main Section</h3>
   	<table class="table table-hover">
       <thead>
@@ -22,13 +19,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>101</td>
-          <td>fix($timeout): clean deferreds immediately after callback exec/cancel</td>
-          <td>Andy Rooger</td>
-          <td>3 hrs ago</td>
-          <td>Previously when passing invokeApply=false, the cleanup used $q and so
-would be pending until the next $digest was triggered. This does not</td>
+        <tr data-ng-repeat="issue in issues">
+          <td>{{issue.id}}</td>
+          <td><a href="{{issue.url}}" title="{{issue.title}}">{{issue.title}}</a></td>
+          <td>{{issue.user.login}}</td>
+          <td>{{issue.updated_at}}</td>
+          <td><button class="btn">View Issue</button></td>
         </tr>
        
       </tbody>
@@ -36,3 +32,9 @@ would be pending until the next $digest was triggered. This does not</td>
 
   </div>
 </div>
+
+
+<pre>
+	{{issues | json}}
+	
+</pre>
