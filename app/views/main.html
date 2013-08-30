@@ -21,13 +21,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr data-ng-repeat="issue in issues | filter:searchIssues">
+        <tr data-ng-repeat="issue in issues | filter:searchIssues" ng-init="init(issue)" >
           <td>{{issue.id}}</td>
           <td><a href="{{issue.html_url}}" title="{{issue.title}}">{{issue.title}}</a></td>
           <td>{{issue.user.login}}</td>
           <td>{{issue.updated_at}}</td>
           <td><button class="btn">View Issue</button></td>
-          <td><input ng-init="issue.public_tags=repos" ui-keypress="{enter:'save(issue)'}" type="text" ng-model="issue.public_tags" ng-list></td>
+          <td><input ui-keypress="{enter:'save(issue)'}" type="text" ng-model="issue.meta_labels[user.username]" ng-list></td>
         </tr>
        
       </tbody>

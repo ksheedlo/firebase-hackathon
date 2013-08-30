@@ -5,16 +5,26 @@ angular.module('firebaseHackathonApp', ['ngRoute', 'ngAnimate', 'firebase', 'ui.
     $routeProvider
       .when('/:profile/:project', {
         templateUrl: 'views/main.html',
-        controller: 'listCtrl'
+        controller: 'listCtrl',
+        resolve: {
+          issues: function($http, $route){
+            var API_BASE = 'https://api.github.com/';
+            var issues_url = API_BASE + 'repos/' + $route.current.params.profile + '/' + $route.current.params.project + '/issues';
+            return $http.get(issues_url).then(function(response){
+                return response.data;
+            });
+          }
+        }
       })
       .otherwise({
         redirectTo: '/'
       });
   }])
-  .run(['angularFire', 'angularFireAuth', '$rootScope', function(angularFire, angularFireAuth, $rootScope){
-    var url = 'https://github-issues.firebaseio.com/repos';
-    angularFire(url, $rootScope, 'repos', {});
-    angularFireAuth.initialize(url, { scope: $rootScope, name: 'user'});
+  .run(['angularFireAuth', '$rootScope', 'angularFire', function(angularFireAuth, $rootScope, angularFire){
+      var url = 'https://github-issues.firebaseio.com/repos';
+      angularFire(url, $rootScope, 'repos', {});
+      angularFireAuth.initialize(url, { scope: $rootScope, name: 'user'});
+    
     $rootScope.login = function() {
       angularFireAuth.login('github');
     };
